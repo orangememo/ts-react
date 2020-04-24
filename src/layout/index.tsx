@@ -50,7 +50,7 @@ export class App extends Component {
             <Layout>
                 <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                     <div className="logo" />
-                    <Menu mode="horizontal" defaultSelectedKeys={['1']} selectedKeys={[this.state.current]} onClick={this.handleClick}>
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} selectedKeys={[this.state.current]} onClick={this.handleClick}>
                         {
 
                             this.getMenuNodes(RoutesData)

@@ -5,6 +5,7 @@ interface Iprops {
 	history: any
 }
 class Home extends Component<Iprops, any> {
+
 	public state = {
 		count: 0,
 	}
@@ -15,7 +16,7 @@ class Home extends Component<Iprops, any> {
 	}
 	componentDidMount() {
 		getRuleInfoTree({ aaa: '111' }).then((res: any) => {
-			console.log(res)
+			console.log('Iprops')
 		})
 	}
 	render() {
