@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect, Link, withRouter } from 'react-router-dom'
-
 import { RoutesData } from './config'
 import { mapComponents } from './mapComponents'
-
 import { Iroute } from '@/types/route'
 // function itemRoute(item: Iroute): any {
 // 	if (item.children && item.children.length != 0) {
@@ -24,7 +22,7 @@ export class router extends Component {
 					return route.children && route.children.length !== 0
 						? route.children && route.children.map(i => router(i)) : router(route)
 				})}
-				<Redirect to="/login" />
+				<Redirect to="/home" />
 			</Switch>
 		)
 	}

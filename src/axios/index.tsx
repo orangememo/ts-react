@@ -13,7 +13,7 @@ const service: any = axios.create({
 // request interceptor
 service.interceptors.request.use(
 	(config: any) => {
-		console.log(config, 'config')
+		console.log(config, "config")
 		// do something before request is sent
 		// message.error(config)
 		return config

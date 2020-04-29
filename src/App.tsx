@@ -1,4 +1,5 @@
 import React from 'react'
+//eslint disable next line
 import { Button } from 'antd'
 import { HashRouter } from 'react-router-dom'
 import BaseLayout from './layout'

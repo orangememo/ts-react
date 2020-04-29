@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd'
+import { Layout, Menu, Breadcrumb, } from 'antd'
 import { Link } from 'react-router-dom'
 import Routes from '@/router'
 import { RoutesData } from '@/router/config'
 import { Iroute } from '@/types/route'
 const { SubMenu } = Menu;
 const { Header, Content, Footer } = Layout
-
-
+let aaa
 export class App extends Component {
     state = {
         current: 'mail',
     }
-
     handleClick = (e: any) => {
         console.log('click ', e);
         this.setState({
@@ -21,6 +19,9 @@ export class App extends Component {
     }
     getMenuNodes = (menuList: Iroute[]) => {
         return menuList.map(item => {
+            if (item.hidden) {
+                return
+            }
             if (!item.children || item.children.length === 0) {
                 return (
                     <Menu.Item key={item.path}>
@@ -58,7 +59,7 @@ export class App extends Component {
                     </Menu>
                 </Header>
                 <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-                    <Breadcrumb style={{ margin: '16px 0' }}>
+                    {/* <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>
                             <Link to='/'>
                                 <span>{'Home'}</span>
@@ -66,7 +67,7 @@ export class App extends Component {
                         </Breadcrumb.Item>
                         <Breadcrumb.Item>List</Breadcrumb.Item>
                         <Breadcrumb.Item>App</Breadcrumb.Item>
-                    </Breadcrumb>
+                    </Breadcrumb> */}
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
                         <Routes />
                     </div>
