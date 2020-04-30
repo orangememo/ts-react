@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Button } from 'antd'
-import { getRuleInfoTree } from '@/api/login'
-import { Timeline, Radio } from 'antd';
-import { ClockCircleOutlined } from '@ant-design/icons';
+// import { Button } from 'antd'
+// import { getRuleInfoTree } from '@/api/login'
+import { Timeline, } from 'antd';
+// import { ClockCircleOutlined } from '@ant-design/icons';
 import marked from '@/lib/marked';
 // import 'braft-editor/dist/output.css'
 interface Iprops {
@@ -19,6 +19,7 @@ class Home extends Component<Iprops, any> {
 		// })
 	}
 	componentDidMount() {
+		console.log(this.props, 'console.log(Iprops);');
 		// getRuleInfoTree({ aaa: '111' }).then((res: any) => {
 		// 	console.log('Iprops')
 		// })
@@ -27,18 +28,21 @@ class Home extends Component<Iprops, any> {
 		let data = [{
 			time: '2015-09-01',
 			content: " ```const clickSave = () => {}   ```"
+		}, {
+			time: '2015-09-01',
+			content: " ```const clickSave = () => {}   ```"
 		}]
 		return (
 			<div>
 				<Timeline>
 					{data.map((item, index) => {
 						return (<Timeline.Item key={index}>
+
+							<div className="for-markdown-preview"
+								dangerouslySetInnerHTML={{ __html: marked(item.content) }} />
 							<h4>
 								创建时间 {item.time}
 							</h4>
-							<div className="for-markdown-preview"
-								dangerouslySetInnerHTML={{ __html: marked(item.content) }} />
-
 
 						</Timeline.Item>)
 					})}
