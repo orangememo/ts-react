@@ -37,12 +37,12 @@ class Home extends Component<Iprops, any> {
 				<Timeline>
 					{data.map((item, index) => {
 						return (<Timeline.Item key={index}>
-
-							<div className="for-markdown-preview"
-								dangerouslySetInnerHTML={{ __html: marked(item.content) }} />
 							<h4>
 								创建时间 {item.time}
 							</h4>
+							<div className="for-markdown-preview"
+								dangerouslySetInnerHTML={{ __html: marked(item.content) }} />
+
 
 						</Timeline.Item>)
 					})}
